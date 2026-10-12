@@ -100,6 +100,16 @@ assert.match(appSource,/lesson\.id==='app-start'\|\|state\.view==='console'/,'Le
 assert.match(appSource,/classList\.toggle\('beginner-mode',beginner\)/,'Lesson 1 must enable progressive interface disclosure');
 assert.doesNotMatch(lessons[0].steps[0].title,/invokes/i,'Lesson 1 should lead with everyday language');
 
+const glossarySource=fs.readFileSync(new URL('../dist/glossary.js',import.meta.url),'utf8');
+for(const requiredTerm of ['program','Java','code','main method','method','console','output','class','object','reference','method call','receiver','field','constructor','parameter','array','JVM']) {
+  assert.ok(glossarySource.includes(`'${requiredTerm}'`),`Glossary must define ${requiredTerm}`);
+}
+assert.match(appSource,/function applyGlossary\(\)/,'Rendered teaching text must be annotated from the glossary');
+assert.match(appSource,/applyGlossary\(\)\}/,'Every render must reapply glossary annotations');
+const learningCss=fs.readFileSync(new URL('../dist/learning.css',import.meta.url),'utf8');
+assert.match(learningCss,/text-decoration-style:dotted/,'Technical terms must use a dotted underline');
+assert.match(learningCss,/\.tech-term:hover::after,\.tech-term:focus::after/,'Term explanations must work on hover and keyboard focus');
+
 const orderedIds=[...lessons.slice(0,5).map(x=>x.id),'method-parameters','meet-this','reference-aliasing',...lessons.slice(5).map(x=>x.id)];
 assert.ok(orderedIds.indexOf('method-parameters')<orderedIds.indexOf('dog-names'),'Ordinary method parameters must precede constructor parameters');
 assert.ok(extensions.filter(lesson=>lesson.projectLesson).length>=3,'Curriculum needs recurring mini projects and a final project');
