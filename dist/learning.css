@@ -1,0 +1,27 @@
+/* Progressive disclosure and readable teaching typography */
+.code-area{font-size:16px;line-height:2}
+.step-copy h2{font-size:19px}
+.step-copy p:last-child{font-size:16px;line-height:1.65}
+.step-copy code,.why-drawer code{font-size:14px}
+.why-drawer{font-size:15px;line-height:1.65}
+.why-button,.control-button,.play-button{font-size:13px}
+.stage-heading>div>p:last-child{font-size:15px;line-height:1.55}
+.plain-english strong{font-size:16px}.plain-english p{font-size:14px;line-height:1.65}
+.pointer-note,.console-view{font-size:14px}
+
+.workspace.beginner-mode{grid-template-columns:minmax(0,1120px);justify-content:center}
+.beginner-mode .lesson-sidebar{display:none}
+.beginner-mode .concept-badge{display:none}
+.beginner-mode .main-grid{grid-template-columns:minmax(0,1.25fr) minmax(320px,.75fr)}
+.beginner-mode .view-tabs{display:none}
+.beginner-mode .visual-panel{min-height:0}
+.beginner-mode .visual-canvas{min-height:260px}
+.beginner-mode .console-view{min-height:220px;font-size:16px}
+.beginner-mode .transport{display:flex;justify-content:flex-end;background:transparent;border:0;box-shadow:none;padding:4px 0}
+.beginner-mode .transport-buttons{display:block}
+.beginner-mode #previousButton,.beginner-mode #playButton,.beginner-mode #resetButton,.beginner-mode .timeline-wrap{display:none}
+.beginner-mode #nextButton{display:block;min-width:170px;height:50px;font-size:15px}
+.beginner-mode .read-only{font-size:13px;text-transform:none;letter-spacing:0}
+
+@media(max-width:900px){.beginner-mode .main-grid{grid-template-columns:1fr}.beginner-mode .visual-panel{margin-top:14px}}
+@media(max-width:760px){.code-area{font-size:15px}.step-copy p:last-child{font-size:15px}.why-drawer{font-size:14px}.beginner-mode .panel{min-height:300px}.beginner-mode .visual-canvas{min-height:190px}.beginner-mode .console-view{min-height:160px}.beginner-mode .transport{position:sticky;bottom:8px;z-index:10}.beginner-mode #nextButton{width:100%}}

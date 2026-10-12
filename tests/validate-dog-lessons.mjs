@@ -96,6 +96,9 @@ assert.match(appSource,/target:'\.code-panel'/,'The welcome tour must identify t
 assert.match(appSource,/target:'\.visual-panel'/,'The welcome tour must identify the execution visual');
 assert.match(appSource,/target:'\.explanation-card'/,'The welcome tour must identify the plain-English explanation');
 assert.match(appSource,/target:'#nextButton'/,'The welcome tour must finish on the primary Next step control');
+assert.match(appSource,/lesson\.id==='app-start'\|\|state\.view==='console'/,'Lesson 1 must always show the simple output view');
+assert.match(appSource,/classList\.toggle\('beginner-mode',beginner\)/,'Lesson 1 must enable progressive interface disclosure');
+assert.doesNotMatch(lessons[0].steps[0].title,/invokes/i,'Lesson 1 should lead with everyday language');
 
 const orderedIds=[...lessons.slice(0,5).map(x=>x.id),'method-parameters','meet-this','reference-aliasing',...lessons.slice(5).map(x=>x.id)];
 assert.ok(orderedIds.indexOf('method-parameters')<orderedIds.indexOf('dog-names'),'Ordinary method parameters must precede constructor parameters');
