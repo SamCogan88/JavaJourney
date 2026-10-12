@@ -5,6 +5,7 @@
 .next-step-button:hover:not(:disabled){background:#155bdc;color:white}
 .lesson-tour[hidden]{display:none}
 .lesson-tour{position:fixed;inset:0;pointer-events:none}
+.lesson-tour:not(.tour-step-active){z-index:80}
 .tour-shade{position:absolute;inset:0;z-index:80;background:rgba(8,18,34,.68);backdrop-filter:blur(2px);pointer-events:auto}
 .tour-card{position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);width:min(470px,calc(100vw - 32px));padding:25px;background:white;border-radius:20px;box-shadow:0 28px 80px rgba(3,12,28,.38);z-index:83;pointer-events:auto}
 .tour-kicker{margin:0 0 7px;color:var(--blue);font-size:11px;letter-spacing:.13em;text-transform:uppercase;font-weight:800}
