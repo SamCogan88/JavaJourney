@@ -16,7 +16,9 @@
 .tour-skip,.tour-next{border-radius:10px;padding:10px 13px;font:700 12px var(--sans);cursor:pointer}
 .tour-skip{border:0;background:transparent;color:var(--muted)}
 .tour-next{border:0;background:var(--blue);color:white}
-.tour-focus{position:relative!important;z-index:82!important;box-shadow:0 0 0 5px #ffc85a,0 0 0 9999px rgba(8,18,34,.68),0 18px 50px rgba(0,0,0,.25)!important}
+.tour-spotlight{display:none;position:fixed;z-index:81;border:5px solid #ffc85a;border-radius:20px;box-shadow:0 0 0 9999px rgba(8,18,34,.68),0 18px 50px rgba(0,0,0,.25);pointer-events:none}
+.tour-step-active .tour-spotlight{display:block}
+.tour-focus{position:relative!important}
 .tour-focus .code-line:not(.active){opacity:.35}
 .tour-step-active .tour-shade{background:transparent;backdrop-filter:none}
 .tour-step-active .tour-card{width:min(390px,calc(100vw - 32px));transform:none}
