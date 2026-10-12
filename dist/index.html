@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="An interactive, step-by-step visual introduction to how Java executes code.">
+  <meta name="theme-color" content="#f6f7fb">
+  <title>Java Journey — See code come alive</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Java Journey home">
+        <span class="brand-mark" aria-hidden="true">J</span>
+        <span>Java Journey</span>
+      </a>
+      <div class="course-progress" aria-label="Course progress">
+        <div class="progress-copy"><strong id="lessonCount">Lesson 1 of 6</strong><span id="lessonDuration">~2 min</span></div>
+        <div class="progress-track"><span id="courseProgress"></span></div>
+      </div>
+      <div class="top-actions">
+        <button class="icon-button sound-toggle" id="soundToggle" aria-label="Toggle sound" aria-pressed="false">
+          <span aria-hidden="true">♪</span><span class="desktop-label">Sound off</span>
+        </button>
+        <button class="icon-button" id="helpButton" aria-label="Open keyboard shortcuts"><span aria-hidden="true">?</span></button>
+      </div>
+    </header>
+
+    <main class="workspace">
+      <aside class="lesson-sidebar" aria-label="Lessons">
+        <div class="sidebar-heading"><span>Learning path</span><span id="completedCount">0/6</span></div>
+        <nav id="lessonNav"></nav>
+        <div class="tip-card">
+          <span class="tip-icon" aria-hidden="true">✦</span>
+          <div><strong>Think like Java</strong><p>Follow the amber line, then watch what changes.</p></div>
+        </div>
+      </aside>
+
+      <section class="lesson-stage">
+        <div class="stage-heading">
+          <div>
+            <p class="eyebrow" id="lessonEyebrow">Lesson 01 · First program</p>
+            <h1 id="lessonTitle">Hello, Java!</h1>
+            <p id="lessonObjective">See how Java enters a program and sends text to the console.</p>
+          </div>
+          <div class="concept-badge" id="conceptBadge">Program flow</div>
+        </div>
+
+        <div class="main-grid">
+          <section class="panel code-panel" aria-label="Java source code">
+            <div class="panel-bar dark-bar">
+              <div class="file-tab"><span class="java-dot">J</span><span>Main.java</span></div>
+              <span class="read-only">guided example</span>
+            </div>
+            <div class="code-area" id="codeArea" role="region" aria-live="polite"></div>
+          </section>
+
+          <section class="panel visual-panel" aria-label="Java execution visualizer">
+            <div class="visual-header">
+              <div><p class="eyebrow">Live visualizer</p><h2>What Java is doing</h2></div>
+              <div class="view-tabs" role="tablist" aria-label="Visualizer view">
+                <button class="view-tab active" data-view="memory" role="tab" aria-selected="true">Memory</button>
+                <button class="view-tab" data-view="flow" role="tab" aria-selected="false">Flow</button>
+                <button class="view-tab" data-view="console" role="tab" aria-selected="false">Console</button>
+              </div>
+            </div>
+            <div id="visualCanvas" class="visual-canvas" aria-live="polite"></div>
+          </section>
+        </div>
+
+        <section class="explanation-card" aria-live="polite">
+          <div class="step-number" id="stepNumber">1</div>
+          <div class="step-copy">
+            <p class="eyebrow" id="stepLabel">Starting point</p>
+            <h2 id="stepTitle">Java finds the main method</h2>
+            <p id="stepExplanation">Every Java application begins inside a method named <code>main</code>.</p>
+          </div>
+          <button class="why-button" id="whyButton" aria-expanded="false">Why?</button>
+        </section>
+        <div class="why-drawer" id="whyDrawer" hidden></div>
+
+        <section class="transport" aria-label="Playback controls">
+          <div class="transport-buttons">
+            <button class="control-button" id="previousButton" aria-label="Previous step">← <span>Back</span></button>
+            <button class="play-button" id="playButton" aria-label="Play animation"><span id="playIcon">▶</span><span id="playText">Play</span></button>
+            <button class="control-button" id="nextButton" aria-label="Next step"><span>Step</span> →</button>
+            <button class="control-button reset-button" id="resetButton" aria-label="Reset lesson">↻ <span>Reset</span></button>
+          </div>
+          <div class="timeline-wrap">
+            <div class="timeline-meta"><span id="timelineLabel">Step 1 of 3</span><label>Speed <select id="speedSelect" aria-label="Playback speed"><option value="1500">0.75×</option><option value="1000" selected>1×</option><option value="650">1.5×</option><option value="400">2×</option></select></label></div>
+            <div class="timeline" id="timeline"></div>
+          </div>
+        </section>
+      </section>
+    </main>
+  </div>
+
+  <div class="modal-backdrop" id="helpModal" hidden>
+    <section class="modal" role="dialog" aria-modal="true" aria-labelledby="helpTitle">
+      <button class="modal-close" id="closeHelp" aria-label="Close">×</button>
+      <p class="eyebrow">Keyboard controls</p><h2 id="helpTitle">Learn at your pace</h2>
+      <div class="shortcut-grid"><span><kbd>Space</kbd> Play / pause</span><span><kbd>→</kbd> Next step</span><span><kbd>←</kbd> Previous step</span><span><kbd>R</kbd> Reset lesson</span></div>
+    </section>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
