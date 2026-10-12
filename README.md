@@ -6,7 +6,7 @@ Live site: https://samcogan88.github.io/JavaJourney/
 
 ## Current curriculum
 
-The opening path contains eight short `App.java` and `Dog.java` lessons:
+The opening path contains eight core `App.java` and `Dog.java` lessons, expanded with application checkpoints and projects:
 
 1. Entering `App.main()`
 2. Defining a second class without executing it
@@ -19,11 +19,13 @@ The opening path contains eight short `App.java` and `Dog.java` lessons:
 
 The original variables, loops, arrays, 2D arrays, challenge, getters/setters, and multiple-Student lessons remain available afterward.
 
+Additional object-first activities include a regular-method parameter lesson before constructors, a dedicated explanation of `this`, reference aliasing, three-question mastery checks, two offline mini projects, and a final Dog Adoption Centre capstone.
+
 ## How execution is represented
 
 Java Journey is a guided execution visualiser. Lesson traces are predefined and validated against the displayed example code; the application does not compile or execute arbitrary Java entered by a learner. Heap and stack diagrams are conceptual teaching models rather than byte-for-byte JVM memory diagrams.
 
-Prediction stops pause playback before consequential steps and reveal feedback only after the learner answers.
+Prediction stops pause playback before consequential steps. Application checks require the correct answer before progression and link back to the relevant lesson after an incorrect attempt.
 
 ## Development
 
@@ -37,5 +39,5 @@ Pushes to `main` deploy automatically through `.github/workflows/pages.yml`.
 
 ## Roadmap
 
-- Release B (in progress): persisted progress and the first keyboard/screen-reader improvements are complete; controlled experiments and broader trace validation remain.
+- Release B (in progress): persistence, application checks, milestone mastery checks, project briefs, and expanded semantic validation are complete; controlled input experiments remain.
 - Release C: conditions, aliasing, arrays of objects, validation setters, nested calls, and debugging challenges.
