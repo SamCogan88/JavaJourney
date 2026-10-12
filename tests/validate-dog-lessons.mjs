@@ -91,6 +91,11 @@ assert.equal(getter[3].vars.dogName,'"Rex"','Returned value must be assigned in 
 const appSource=fs.readFileSync(new URL('../dist/app.js', import.meta.url),'utf8');
 assert.match(appSource,/current\.activity\?state\.predictions\.get\(predictionKey\(\)\)===interaction\.answer/,'Application checks must require the correct answer');
 assert.match(appSource,/if\(!passed\)return/,'Next-step gating must block failed application checks');
+assert.match(appSource,/const tourSteps=\[/,'Lesson 1 must include an interface orientation tour');
+assert.match(appSource,/target:'\.code-panel'/,'The welcome tour must identify the code area');
+assert.match(appSource,/target:'\.visual-panel'/,'The welcome tour must identify the execution visual');
+assert.match(appSource,/target:'\.explanation-card'/,'The welcome tour must identify the plain-English explanation');
+assert.match(appSource,/target:'#nextButton'/,'The welcome tour must finish on the primary Next step control');
 
 const orderedIds=[...lessons.slice(0,5).map(x=>x.id),'method-parameters','meet-this','reference-aliasing',...lessons.slice(5).map(x=>x.id)];
 assert.ok(orderedIds.indexOf('method-parameters')<orderedIds.indexOf('dog-names'),'Ordinary method parameters must precede constructor parameters');

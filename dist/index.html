@@ -10,6 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css?v=priority-action1">
+  <link rel="stylesheet" href="tour.css?v=welcome-tour1">
 </head>
 <body>
   <div class="app-shell">
@@ -76,7 +77,7 @@
             <h2 id="stepTitle">Java finds the main method</h2>
             <p id="stepExplanation">Every Java application begins inside a method named <code>main</code>.</p>
           </div>
-          <button class="why-button" id="whyButton" aria-expanded="false">Why?</button>
+          <button class="why-button" id="whyButton" aria-expanded="false">Explain this</button>
         </section>
         <div class="why-drawer" id="whyDrawer" hidden></div>
         <p class="sr-only" id="stepStatus" role="status" aria-live="polite" aria-atomic="true"></p>
@@ -91,7 +92,7 @@
           <div class="transport-buttons">
             <button class="control-button" id="previousButton" aria-label="Previous step">← <span>Back</span></button>
             <button class="play-button" id="playButton" aria-label="Play animation"><span id="playIcon">▶</span><span id="playText">Play</span></button>
-            <button class="control-button" id="nextButton" aria-label="Next step"><span>Step</span> →</button>
+            <button class="control-button next-step-button" id="nextButton" aria-label="Next step"><span>Next step</span> →</button>
             <button class="control-button reset-button" id="resetButton" aria-label="Reset lesson">↻ <span>Reset</span></button>
           </div>
           <div class="timeline-wrap">
@@ -108,11 +109,21 @@
       <button class="modal-close" id="closeHelp" aria-label="Close">×</button>
       <p class="eyebrow">Keyboard controls</p><h2 id="helpTitle">Learn at your pace</h2>
       <div class="shortcut-grid"><span><kbd>Space</kbd> Play / pause</span><span><kbd>→</kbd> Next step</span><span><kbd>←</kbd> Previous step</span><span><kbd>R</kbd> Reset lesson</span></div>
-      <div class="modal-actions"><button class="reset-progress-button" id="resetProgressButton">Reset all progress</button></div>
+      <div class="modal-actions"><button class="tour-replay-button" id="replayTourButton">Show welcome tour</button><button class="reset-progress-button" id="resetProgressButton">Reset all progress</button></div>
     </section>
   </div>
-  <script src="dog-lessons.js?v=curriculum-fixes2"></script>
-  <script src="curriculum-extensions.js?v=curriculum-fixes2"></script>
-  <script src="app.js?v=curriculum-fixes2"></script>
+
+  <div class="lesson-tour" id="lessonTour" hidden>
+    <div class="tour-shade" aria-hidden="true"></div>
+    <section class="tour-card" id="tourCard" role="dialog" aria-modal="true" aria-labelledby="tourTitle" aria-describedby="tourText">
+      <p class="tour-kicker" id="tourKicker">Welcome to Java Journey</p>
+      <h2 id="tourTitle">You do not need to understand every symbol yet</h2>
+      <p id="tourText">We will follow one highlighted line at a time. You will see what Java does, read a plain-English explanation, and make predictions as you learn.</p>
+      <div class="tour-footer"><span id="tourProgress">1 of 5</span><div><button class="tour-skip" id="tourSkipButton">Skip tour</button><button class="tour-next" id="tourNextButton">Show me around</button></div></div>
+    </section>
+  </div>
+  <script src="dog-lessons.js?v=welcome-tour1"></script>
+  <script src="curriculum-extensions.js?v=welcome-tour1"></script>
+  <script src="app.js?v=welcome-tour1"></script>
 </body>
 </html>
