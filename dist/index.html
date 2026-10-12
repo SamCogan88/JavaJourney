@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=release-a1">
+  <link rel="stylesheet" href="styles.css?v=release-b1">
 </head>
 <body>
   <div class="app-shell">
@@ -53,23 +53,23 @@
               <div class="file-tab"><span class="java-dot">J</span><span id="fileName">Main.java</span></div>
               <span class="read-only">guided example</span>
             </div>
-            <div class="code-area" id="codeArea" role="region" aria-live="polite"></div>
+            <div class="code-area" id="codeArea" role="region"></div>
           </section>
 
           <section class="panel visual-panel" aria-label="Java execution visualizer">
             <div class="visual-header">
               <div><p class="eyebrow">Live visualizer</p><h2>What Java is doing</h2></div>
               <div class="view-tabs" role="tablist" aria-label="Visualizer view">
-                <button class="view-tab active" data-view="memory" role="tab" aria-selected="true">Memory</button>
-                <button class="view-tab" data-view="flow" role="tab" aria-selected="false">Flow</button>
-                <button class="view-tab" data-view="console" role="tab" aria-selected="false">Console</button>
+                <button class="view-tab active" data-view="memory" role="tab" aria-selected="true" aria-controls="visualCanvas" tabindex="0">Memory</button>
+                <button class="view-tab" data-view="flow" role="tab" aria-selected="false" aria-controls="visualCanvas" tabindex="-1">Flow</button>
+                <button class="view-tab" data-view="console" role="tab" aria-selected="false" aria-controls="visualCanvas" tabindex="-1">Console</button>
               </div>
             </div>
-            <div id="visualCanvas" class="visual-canvas" aria-live="polite"></div>
+            <div id="visualCanvas" class="visual-canvas" role="tabpanel"></div>
           </section>
         </div>
 
-        <section class="explanation-card" aria-live="polite">
+        <section class="explanation-card">
           <div class="step-number" id="stepNumber">1</div>
           <div class="step-copy">
             <p class="eyebrow" id="stepLabel">Starting point</p>
@@ -79,6 +79,7 @@
           <button class="why-button" id="whyButton" aria-expanded="false">Why?</button>
         </section>
         <div class="why-drawer" id="whyDrawer" hidden></div>
+        <p class="sr-only" id="stepStatus" role="status" aria-live="polite" aria-atomic="true"></p>
 
         <section class="prediction-card" id="predictionCard" hidden aria-labelledby="predictionPrompt">
           <div><p class="eyebrow">Pause and predict</p><h2 id="predictionPrompt"></h2></div>
@@ -107,9 +108,10 @@
       <button class="modal-close" id="closeHelp" aria-label="Close">×</button>
       <p class="eyebrow">Keyboard controls</p><h2 id="helpTitle">Learn at your pace</h2>
       <div class="shortcut-grid"><span><kbd>Space</kbd> Play / pause</span><span><kbd>→</kbd> Next step</span><span><kbd>←</kbd> Previous step</span><span><kbd>R</kbd> Reset lesson</span></div>
+      <div class="modal-actions"><button class="reset-progress-button" id="resetProgressButton">Reset all progress</button></div>
     </section>
   </div>
-  <script src="dog-lessons.js?v=release-a1"></script>
-  <script src="app.js?v=release-a1"></script>
+  <script src="dog-lessons.js?v=release-b1"></script>
+  <script src="app.js?v=release-b1"></script>
 </body>
 </html>
