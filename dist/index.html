@@ -19,20 +19,17 @@
         <span>Java Journey</span>
       </a>
       <div class="course-progress" aria-label="Course progress">
-        <div class="progress-copy"><strong id="lessonCount">Lesson 1 of 6</strong><span id="lessonDuration">~2 min</span></div>
+        <div class="progress-copy"><strong id="lessonCount">Lesson</strong><span id="lessonDuration">~2 min</span></div>
         <div class="progress-track"><span id="courseProgress"></span></div>
       </div>
       <div class="top-actions">
-        <button class="icon-button sound-toggle" id="soundToggle" aria-label="Toggle sound" aria-pressed="false">
-          <span aria-hidden="true">♪</span><span class="desktop-label">Sound off</span>
-        </button>
         <button class="icon-button" id="helpButton" aria-label="Open keyboard shortcuts"><span aria-hidden="true">?</span></button>
       </div>
     </header>
 
     <main class="workspace">
       <aside class="lesson-sidebar" aria-label="Lessons">
-        <div class="sidebar-heading"><span>Learning path</span><span id="completedCount">0/6</span></div>
+        <div class="sidebar-heading"><span>Learning path</span><span id="completedCount">0 complete</span></div>
         <nav id="lessonNav"></nav>
         <div class="tip-card">
           <span class="tip-icon" aria-hidden="true">✦</span>
@@ -83,6 +80,12 @@
         </section>
         <div class="why-drawer" id="whyDrawer" hidden></div>
 
+        <section class="prediction-card" id="predictionCard" hidden aria-labelledby="predictionPrompt">
+          <div><p class="eyebrow">Pause and predict</p><h2 id="predictionPrompt"></h2></div>
+          <div class="prediction-options" id="predictionOptions"></div>
+          <p class="prediction-feedback" id="predictionFeedback" role="status" aria-live="polite"></p>
+        </section>
+
         <section class="transport" aria-label="Playback controls">
           <div class="transport-buttons">
             <button class="control-button" id="previousButton" aria-label="Previous step">← <span>Back</span></button>
@@ -106,6 +109,7 @@
       <div class="shortcut-grid"><span><kbd>Space</kbd> Play / pause</span><span><kbd>→</kbd> Next step</span><span><kbd>←</kbd> Previous step</span><span><kbd>R</kbd> Reset lesson</span></div>
     </section>
   </div>
+  <script src="dog-lessons.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
