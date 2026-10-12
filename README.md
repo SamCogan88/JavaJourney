@@ -37,5 +37,5 @@ Pushes to `main` deploy automatically through `.github/workflows/pages.yml`.
 
 ## Roadmap
 
-- Release B: persisted progress, controlled experiments, accessibility improvements, and broader trace validation.
+- Release B (in progress): persisted progress and the first keyboard/screen-reader improvements are complete; controlled experiments and broader trace validation remain.
 - Release C: conditions, aliasing, arrays of objects, validation setters, nested calls, and debugging challenges.
